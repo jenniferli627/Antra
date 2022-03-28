@@ -7,6 +7,8 @@ An albums search app using pure HTML, CSS, and JavaScript
 5. Create an Albums List to display the list of albums, including the album name and cover.
 6. Style the page to the best of the ability to make the UI look clean and presentable
 
+checklist:
+  [] Validate user input: empty entry will be notified and not submitted.
 
 
 
