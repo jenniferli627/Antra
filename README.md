@@ -15,4 +15,11 @@ Key points:
 - [x] Nav bar fixed as the page is being scrolled.
 - [x] Responsiveness.
 
+Improvement:
+- [x] Pagination 
+- [x] Click pagination to jump to the top of the page
+- [ ] Recent search
+- [ ] Hover animation
+- [ ] Link to store
+
 
