@@ -8,7 +8,7 @@ An albums search app using pure HTML, CSS, and JavaScript
 6. Style the page to the best of the ability to make the UI look clean and presentable
 
 checklist:
-- [] Validate user input: empty entry will be notified and not submitted.
-
+- [x] Validate user input: empty entry will be notified and not submitted.
+- [x] Show the number of the results
 
 
