@@ -19,7 +19,7 @@ Improvement:
 - [x] Pagination 
 - [x] Click pagination to jump to the top of the page
 - [ ] Recent search
-- [ ] Hover animation
-- [ ] Link to store
+- [x] Hover animation
+- [x] Link to store
 
 
