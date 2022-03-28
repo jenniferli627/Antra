@@ -76,6 +76,7 @@ const displayData = (results) => {
       let currentActive = document.querySelector("#pagination a.active");
       currentActive.classList.remove("active");
       page.classList.add("active");
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
     });
   }
 };
@@ -94,7 +95,7 @@ const fetchData = async () => {
       }
       displayData(data.results);
     } else {
-      alert("Fill out this field");
+      alert("Field could not be empty");
     }
   } catch (e) {
     alert(e);
