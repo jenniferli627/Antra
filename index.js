@@ -48,12 +48,16 @@ const displayList = (results, currentPage) => {
     text.setAttribute("class", "name");
     text.innerHTML = data.artistName;
 
+    const link = document.createElement("a");
+    link.href = data.collectionViewUrl;
+
     const photo = document.createElement("img");
     photo.setAttribute("class", "cover");
     photo.src = data.artworkUrl60;
 
     content.appendChild(box);
-    box.appendChild(photo);
+    box.appendChild(link);
+    link.appendChild(photo);
     box.appendChild(text);
   });
 };
@@ -93,6 +97,7 @@ const fetchData = async () => {
       loading()
       const url = `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200`;
       const data = await fetch(url).then((res) => res.json());
+      console.log(data)
       displayData(data.results);
     } else {
       alert("Field could not be empty");

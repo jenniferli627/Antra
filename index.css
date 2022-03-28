@@ -79,13 +79,19 @@ section {
 
 .box {
     display: inline-block;
-    margin: 10px;
+    margin: 20px;
     width: 140px;
     height: 180px;
     overflow: hidden;
     border-radius: 5px;
     border: 5px solid var(--color-light-pink);
     background-color: var(--color-grey);
+}
+
+.box:hover{
+    height: 190px;
+    width: 150px;
+    transition: All 0.5s ease-in-out;
 }
 
 .cover {
