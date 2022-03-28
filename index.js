@@ -81,18 +81,18 @@ const displayData = (results) => {
   }
 };
 
+function loading(){
+  const loading = `<div id ="loader"></div>`;
+  title.innerHTML = loading;
+}
+
 
 const fetchData = async () => {
   try {
     if (ARTIST_NAME) {
+      loading()
       const url = `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200`;
       const data = await fetch(url).then((res) => res.json());
-      //this part not working right now, I wanted to use setState, will learn more about how to solve this in pure js
-      while (!data) {
-        const loading = `<div id ="loader"></div>`;
-        console.log(loading);
-        title.innerHTML = loading;
-      }
       displayData(data.results);
     } else {
       alert("Field could not be empty");
