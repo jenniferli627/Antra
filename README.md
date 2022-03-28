@@ -10,7 +10,7 @@ Basic functions:
 
 Key points:
 - [x] Validate user input: empty entry will be notified and not submitted.
-- [ ] While the page is loading results, show a spinner as in the demo.
+- [x] While the page is loading results, show a spinner as in the demo.
 - [x] Show the number of the results.
 - [x] Nav bar fixed as the page is being scrolled.
 - [x] Responsiveness.
