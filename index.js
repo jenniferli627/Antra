@@ -4,6 +4,7 @@ const btn = document.getElementById("search-icon");
 const title = document.getElementById("search-title");
 const content = document.getElementById("search-content");
 const pagination = document.getElementById("pagination");
+const card = document.getElementById("card")
 
 let currentPage = 1;
 let itemPerPage = 30;
@@ -42,24 +43,67 @@ const displayList = (results, currentPage) => {
   title.innerHTML = `${results.length} results for "${ARTIST_NAME}", current page is ${currentPage}, display from ${start} to ${end} items`;
 
   paginatedItems.forEach((data) => {
-    const box = document.createElement("div");
-    box.setAttribute("class", "box");
+    const front = document.createElement("div");
+    front.setAttribute("class", "front");
+
+    const back = document.createElement("div");
+    back.setAttribute("class", "back");
 
     const text = document.createElement("p");
     text.setAttribute("class", "name");
     text.innerHTML = data.artistName;
 
-    const link = document.createElement("a");
-    link.href = data.collectionViewUrl;
+    const card = document.createElement("div");
+    card.setAttribute("id", "card");
+
+    //const link = document.createElement("a");
+    //link.href = data.collectionViewUrl;
 
     const photo = document.createElement("img");
     photo.setAttribute("class", "cover");
     photo.src = data.artworkUrl60;
 
-    content.appendChild(box);
-    box.appendChild(link);
-    link.appendChild(photo);
-    box.appendChild(text);
+    content.appendChild(card);
+
+    card.appendChild(front);
+    card.appendChild(back);
+    front.appendChild(photo);
+    //link.appendChild(photo);
+    front.appendChild(text);
+
+    const artistName = document.createElement("p");
+    artistName.setAttribute("class", "text");
+    artistName.innerHTML = data.artistName;
+
+    const collectionName = document.createElement("p");
+    collectionName.setAttribute("class", "text");
+    collectionName.innerHTML = data.collectionName;
+
+    const collectionPrice = document.createElement("p");
+    collectionPrice.setAttribute("class", "text");
+    collectionPrice.innerHTML = data.collectionPrice;
+
+    const copyright = document.createElement("p");
+    copyright.setAttribute("class", "text");
+    copyright.innerHTML = data.copyright;
+
+    const country = document.createElement("p");
+    country.setAttribute("class", "text");
+    country.innerHTML = data.country;
+
+    const releaseDate = document.createElement("p");
+    releaseDate.setAttribute("class", "text");
+    releaseDate.innerHTML = data.releaseDate;
+
+    back.appendChild(artistName);
+    back.appendChild(collectionName);
+    back.appendChild(collectionPrice);
+    back.appendChild(copyright);
+    back.appendChild(country);
+    back.appendChild(releaseDate);
+
+    //link.appendChild(photo);
+    //back.appendChild(text);
   });
 };
 
@@ -82,6 +126,7 @@ const displayData = (results) => {
       currentActive.classList.remove("active");
       page.classList.add("active");
       document.body.scrollTop = document.documentElement.scrollTop = 0;
+    addFilp()
     });
   }
 };
@@ -91,13 +136,24 @@ function loading(){
   title.innerHTML = loading;
 }
 
+function filpcard(){
+  this.classList.toggle("filpCard");
+}
+
+function addFilp(){
+  const cards = document.querySelectorAll("#card")
+  if (cards){cards.forEach((item) => item.addEventListener('click', filpcard));}
+}
+
 const fetchData = async () => {
   try {
     if (ARTIST_NAME) {
       loading();
       const url = `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200`;
       const data = await fetch(url).then((res) => res.json());
+      console.log(data);
       displayData(data.results);
+      addFilp()
     } else {
       alert("Field could not be empty");
     }
