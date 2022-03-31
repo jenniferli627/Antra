@@ -20,6 +20,7 @@ nav {
     background-image: linear-gradient(90deg, var(--color-purple), var(--color-pink), var(--color-light-pink));
     height: 4.5em;
     width: 100%;
+    z-index: 2;
 }
 
 
@@ -52,7 +53,6 @@ section {
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 3em;
-    overflow:hidden 
 }
 
 #loader {
@@ -67,7 +67,6 @@ section {
 #search-title,
 #search-content {
     margin: 20px;
-    position: relative;
 }
 
 #break-line {
@@ -77,6 +76,8 @@ section {
 
 #search-content {
     width: 80%;
+    padding-top: 2em;
+    position: sticky;
 }
 
 .front {
@@ -105,7 +106,7 @@ section {
     display: inline-block;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
-    position:relative;
+    position: relative;
 }
 
 .filpCard{
