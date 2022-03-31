@@ -4,6 +4,7 @@ const btn = document.getElementById("search-icon");
 const title = document.getElementById("search-title");
 const content = document.getElementById("search-content");
 const pagination = document.getElementById("pagination");
+
 let currentPage = 1;
 let itemPerPage = 30;
 let ARTIST_NAME;
@@ -90,14 +91,12 @@ function loading(){
   title.innerHTML = loading;
 }
 
-
 const fetchData = async () => {
   try {
     if (ARTIST_NAME) {
-      loading()
+      loading();
       const url = `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=200`;
       const data = await fetch(url).then((res) => res.json());
-      console.log(data)
       displayData(data.results);
     } else {
       alert("Field could not be empty");
@@ -108,4 +107,6 @@ const fetchData = async () => {
   }
 };
 
-btn.addEventListener("click", fetchData);
+btn.addEventListener("click", function(event){
+  event.preventDefault();
+  fetchData()});
