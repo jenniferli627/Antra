@@ -18,7 +18,7 @@ Key points:
 Improvement:
 - [x] Pagination 
 - [x] Click pagination to jump to the top of the page
-- [ ] Recent search
+- [x] Filp card to show more info
 - [x] Hover animation
 - [x] Link to store
 
