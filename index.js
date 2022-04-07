@@ -19,7 +19,7 @@ input.addEventListener("keyup", (e) => {
   }
 });
 
-title.html("Search Albums by ArtistName:");
+$$("search-title").html("Search Albums by ArtistName:");
 
 const clearData = () => {
   while (content.firstChild) {
@@ -42,7 +42,7 @@ const displayList = (results, currentPage) => {
       : results.length;
   let paginatedItems = results.slice(start, end);
 
-  title.innerHTML = `${results.length} results for "${ARTIST_NAME}", current page is ${currentPage}, display from ${start} to ${end} items`;
+  $$("search-title").html(`${results.length} results for "${ARTIST_NAME}", current page is ${currentPage}, display from ${start} to ${end} items`);
 
   paginatedItems.forEach((data) => {
     const front = document.createElement("div");
@@ -100,10 +100,8 @@ const displayList = (results, currentPage) => {
     back.appendChild(artistName);
     back.appendChild(collectionName);
     back.appendChild(collectionPrice);
-    
     back.appendChild(country);
    
-
     //link.appendChild(photo);
     //back.appendChild(text);
   });

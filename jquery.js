@@ -1,6 +1,6 @@
 class JQuery {
     constructor(selector) {
-        this.element = document.querySelector(selector);
+        this.element = document.getElementById(selector);
     }
 
     html(innerhtml) {
@@ -12,12 +12,13 @@ class JQuery {
     on(event, cb) {
         this.elements.forEach(element => {
             element.addEventListener(event, cb)
-
         })
     }
 
-    value() {
-        return this.element.value;
+    createElement(ele){
+        this.elements.forEach(element => {
+            element.createElement(ele)
+        })
     }
 
     async ajax({ url }) {
