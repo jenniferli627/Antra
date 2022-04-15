@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <h1>Text</h1>
+    <form id="form">
+        <input
+          id="input-box1"
+          class="input-box"
+          type="text"
+          onblur="errorBg1()"
+        />
+        <input
+          id="input-box2"
+          class="input-box"
+          type="text"
+          placeholder="placeholder"
+          onblur="errorBg2()"
+        />
+        <input
+          id="input-box3"
+          class="input-box"
+          type="text"
+          value="input"
+          onblur="errorBg3()"
+        />
+      </form>
+
+      <script>
+        const result1 = document.getElementById("input-box1");
+        const result2 = document.getElementById("input-box2");
+        const result3 = document.getElementById("input-box3");
+  
+        result1.addEventListener("blur", errorBg1);
+        result2.addEventListener("blur", errorBg2);
+        result3.addEventListener("blur", errorBg3);
+  
+        function errorBg1() {
+          if (result1.value !== "error") {
+            result1.style.background = "white";
+          } else {
+            result1.style.background = "red";
+          }
+        }
+  
+        function errorBg2() {
+          if (result2.value !== "error") {
+            result2.style.background = "white";
+          } else {
+            result2.style.background = "red";
+          }
+        }
+  
+        function errorBg3() {
+          if (result3.value !== "error") {
+            result3.style.background = "white";;
+          } else {
+            result3.style.background = "red";
+          }
+        }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+    background-color: lightgray;
+  }
+  
+  .input-box {
+    padding: 10px;
+    margin: 0.5em;
+  }
+  
+  .input-box:hover {
+    outline: 5px solid grey;
+  }
+  
+  .input-box:focus {
+    outline: 5px solid black;
+  }
