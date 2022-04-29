@@ -11,7 +11,7 @@ const Routing = () => {
       <Routes>
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<Homepage />} />
+        <Route exact path="/" element={<Homepage />} />
       </Routes>
     </Router>
   )

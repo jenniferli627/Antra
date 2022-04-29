@@ -3,6 +3,12 @@ import './styles.css';
 import "../boostrap/css/bootstrap.min.css";
 import {Helmet} from "react-helmet";
 
+import facebookSvg from '../images/facebook.svg';
+import linkedinSvg from "../images/linkedin.svg";
+import pinterestSvg from "../images/pinterest.svg";
+import emailSvg from "../images/email.svg";
+
+
 export default function Footer(){
 
     return(
@@ -16,25 +22,25 @@ export default function Footer(){
                         <div class="media-links">
                             <div class="col-sm-1 col-md-1 col-sm-offset-4 col-md-offset-4">
                                 <div class="facebook">
-                                    <a href="#"><img class="img-responsive" src="./images/facebook.svg"/></a>
+                                    <a href="#"><img class="img-responsive" src={facebookSvg} /></a>
                                 </div>
                             </div>
 
                             <div class="col-sm-1 col-md-1">
                                 <div class="linkedin">
-                                    <a href="#"><img class="img-responsive" src="./images/linkedin.svg" /></a>
+                                    <a href="#"><img class="img-responsive" src={linkedinSvg} /></a>
                                 </div>
                             </div>
 
                             <div class="col-sm-1 col-md-1">
                                 <div class="pinterest">
-                                    <a href="#"><img class="img-responsive" src="./images/pinterest.svg" /></a>
+                                    <a href="#"><img class="img-responsive" src={pinterestSvg} /></a>
                                 </div>
                             </div>
 
                             <div class="col-sm-1 col-md-1">
                                 <div class="email-icon">
-                                    <a href="#"><img class="img-responsive" src="./images/email.svg" /></a>
+                                    <a href="#"><img class="img-responsive" src={emailSvg} /></a>
                                 </div>
                             </div>
                         </div>
